@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
+import { FormGroup, FormControl, ControlLabel, Table } from 'react-bootstrap'
 import { CardElement, injectStripe } from 'react-stripe-elements'
 import LoaderButton from './LoaderButton'
 import './BillingForm.css'
@@ -56,7 +56,26 @@ class BillingForm extends Component {
     return (
       <form className='BillingForm' onSubmit={this.handleSubmitClick}>
         <FormGroup bsSize='large' controlId='storage'>
-          <ControlLabel>Storage</ControlLabel>
+          <hr />
+          <h3>Credits for Note Storage</h3>
+          <Table bordered condensed>
+            <thead>
+              <tr>
+                <th>Purchased</th>
+                <th>Used</th>
+                <th>Available</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100</td>
+                <td>5</td>
+                <td>95</td>
+              </tr>
+            </tbody>
+          </Table>
+
+          <ControlLabel>Buy more storage credits:</ControlLabel>
           <FormControl
             min='0'
             type='number'
